@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-03-09 13:38:40
+ * @version $Id$
+ */
+#myCarousel
+{
+	margin-top: 50px;
+}
+#myCarousel img 
+{
+	margin: 0 auto;
+}
+
+/* tab1 start */
+.container .tab-h2
+{
+	color: #0059b2;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 18px;
+}
+.container .tab-p
+{
+	color: #999;
+	text-align: center;
+	margin: 20px 0 40px 0;
+	letter-spacing: 1px;
+	
+}
+.media-lfet
+{
+	float: left;
+}
+.rwo .media-body
+{
+	padding-left: 10px;
+}
+.col
+{
+	padding: 20px;
+}
+
+
+	
+/* tab1 end */
+
+/* tab2 start */
+
+.tab2,.tab3
+{
+	padding: 60px 20px;
+	
+	text-align: center;
+}
+.tab2
+{
+	background-color: #eee;
+}
+.tab2 img
+{
+	width: 40%;
+	height: 40%;
+}
+.tab3 img
+{
+	width: 65%;
+	height: 65%;
+}
+
+/* tab2 end */
+
+
+
+
+
+/* 媒体查询 start */
+@media (min-width: 992px)
+{
+	.container .tab-h2
+	{
+		
+		font-size: 24px;
+	}
+	.container .tab-p
+	{
+		font-size: 18px;
+		
+	}
+}
+
+/* 媒体查询 end */
+#footer
+{
+	background-color: #eee;
+	border-top:1px solid #ccc;
+	padding: 20px;
+	text-align: center; 
+}
+/* 底部 end */
