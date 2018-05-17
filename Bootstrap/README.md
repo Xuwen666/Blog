@@ -95,13 +95,67 @@ data-target 表示触发的节点
 如果不是使用button，而是a，其中 data-target 也可以使用 href="#myModal"
 取代。当然，我们建议使用 data-target。除了 data-toggle 和 data-target 两个声明属性外，还有一些可以用选项。
 #### - 参数
-	可以通过在 HTML 元素上设置 data-*的属性声明来控制效果
+可以通过在 HTML 元素上设置 data-*的属性声明来控制效果
+
 |  属性名称 |  类型 |  默认值 |  描述 |
 | ------------ | ------------ | ------------ | ------------ |
-|  data-backdrop | 布尔值或'static'  |  true | 默认值 true，表示背景存在黑灰透明遮罩，且单击空白背景可关闭弹窗；如果为 false，表示背景不存在黑灰透明遮罩，且点击空白背景不可关闭弹窗；如果是字符串'static'，表示背景存在黑灰透明遮罩，且点击空白不可关闭弹窗。  |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+|  data-backdrop | 布尔值或'static'  |  true | 默认值 true，表示背景存在黑灰透明遮罩，且单击空白背景可关闭弹窗；<br>如果为 false，表示背景不存在黑灰透明遮罩，且点击空白背景不可关闭弹窗；<br>如果是字符串'static'，表示背景存在黑灰透明遮罩，且点击空白不可关闭弹窗。  |
+|  data-keyboard | 布尔值  |  true | 如果是 true，按 esc 键会关闭窗口；<br>如果是 false，按 esc 键会不会关闭。  |
+| data-show  | 布尔值  |  true | 如果是 true，初始化时，默认显示；<br>如果是 false，初始化时，默认隐藏。  |
+|  href | url 路径  | 空值  | 如果值不是以#号开头，则表示一个url 地址，加载 url 内容到modal-content 容器里，并只加载一次。如果是#号，就是取代data-target 的方法。  |
+//空白背景且点击不关闭
+data-backdrop="false"
+
+//按下 esc 不关闭
+data-keyboard="false"
+
+//初始化隐藏，如果是按钮点击触发，第一次点击则无法显示，第二次显示。
+data-show="false"
+
+//加载一次 index.html 到容器内 
+href="index.html"
+
+	当然，也可以在 JavaScript 直接设置。
+
+|  属性名称 |  类型 |  默认值 |  描述 |
+| ------------ | ------------ | ------------ | ------------ |
+| backdrop | 布尔值或'static'  |  true | 默认值 true，表示背景存在黑灰透明遮罩，且单击空白背景可关闭弹窗；<br>如果为 false，表示背景不存在黑灰透明遮罩，且点击空白背景不可关闭弹窗；<br>如果是字符串'static'，表示背景存在黑灰透明遮罩，且点击空白不可关闭弹窗。  |
+|  keyboard | 布尔值  |  true | 如果是 true，按 esc 键会关闭窗口；<br>如果是 false，按 esc 键会不会关闭。  |
+|show  | 布尔值  |  true | 如果是 true，初始化时，默认显示；<br>如果是 false，初始化时，默认隐藏。  |
+|  remote | url 路径  | 空值  | 远程获取指定内容填充到modal-content 容器内。  |
+
+```javascript
+//通过 jQuery 方式声明 $('#myModal').modal({
+
+show : true,
+
+backdrop : false,
+
+keyboard : false,
+
+remote : 'index.html',
+
+});
+```
+#### - 方法
+如果说，默认不显示弹窗，那么怎么才能通过点击前后弹窗呢？
+
+| 参数名称  | 使用方法  | 描述  |
+| ------------ | ------------ | ------------ |
+| toggle  |  .modal('toggle') | 触发时，反转切换弹窗状态  |
+|  show | .modal('show')  | 触发时，显示弹窗  |
+|  hide |  .modal('hide') | 触发时，关闭弹窗  |
+
+```javascript
+//点击显示弹窗
+
+$('#btn').on('click', function () {
+
+$('#myModal').modal('show');
+
+});
+```
 
 ##  模态框
+
 
