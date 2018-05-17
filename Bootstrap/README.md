@@ -244,7 +244,7 @@ $('#dropdown').on('show.bs.dropdown', function () {
 alert('在调用 show 方法时立即触发！');
 ```
 
-##  滚动监听
+##  滚动监听(注意水平滚动监元素要绑定body身上)
 滚动监听插件是用来根据滚动条所处在的位置自动更新导航项目，显示导航项目高亮显示。
 ```html
 <nav id="nav" class="navbar navbar-default">
@@ -308,3 +308,44 @@ offset : 0,
 target : '#nav',
 });
 ```
+#### - 事件
+
+|  事件名 | 描述  |
+| ------------ | ------------ |
+|  activate.bs.scrollspy | 每当一个新条目被激活后都将由滚动监听插件触发此事件。 |
+
+```javascript
+//事件绑定在导航上
+
+$('#nav').on('activate.bs.scrollspy', function () {
+
+alert('新条目被激活后触发此事件！');
+
+});
+```
+#### - 方法
+
+| 方法名  |  描述 |
+| ------------ | ------------ |
+| refresh  |  更新容器 DOM 的方法 |
+```javascript
+//HTML 部分	
+<section class="sec">	
+<h4 id="html5">HTML5	
+
+<a href="#" onclick="removeSec(this)">删除此项</a></h4> <p>...</p>
+
+</section>
+
+//删除内容时，刷新一下 DOM，避免导航监听错位
+
+function removeSec(e) {
+
+$(e).parents('.sec').remove();
+
+$('#content').scrollspy('refresh');
+
+}
+```
+
+
