@@ -85,7 +85,23 @@ dialog(窗口声明层)、content(内容层)。在内容层里面，还有三层
 </div>
 ```
 基本使用介绍结束之后，我们就来看下插件的各种重要用法。所有的插件，都是基于 JavaScript/jQuery 的。那么，就有四个要素：用法、参数、方法和事件。
-#### - 用法
+#### - 用法 data-toggle
   第一种：可以通过 data 属性
+```html
+data-toggle="modal" data-target="#myModal"
+data-toggle 表示触发类型
+data-target 表示触发的节点
+```
+如果不是使用button，而是a，其中 data-target 也可以使用 href="#myModal"
+取代。当然，我们建议使用 data-target。除了 data-toggle 和 data-target 两个声明属性外，还有一些可以用选项。
+#### - 参数
+	可以通过在 HTML 元素上设置 data-*的属性声明来控制效果
+|  属性名称 |  类型 |  默认值 |  描述 |
+| ------------ | ------------ | ------------ | ------------ |
+|  data-backdrop | 布尔值或'static'  |  true | 默认值 true，表示背景存在黑灰透明遮罩，且单击空白背景可关闭弹窗；如果为 false，表示背景不存在黑灰透明遮罩，且点击空白背景不可关闭弹窗；如果是字符串'static'，表示背景存在黑灰透明遮罩，且点击空白不可关闭弹窗。  |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
 
 ##  模态框
+
