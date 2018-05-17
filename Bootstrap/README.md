@@ -103,6 +103,7 @@ data-target 表示触发的节点
 |  data-keyboard | 布尔值  |  true | 如果是 true，按 esc 键会关闭窗口；<br>如果是 false，按 esc 键会不会关闭。  |
 | data-show  | 布尔值  |  true | 如果是 true，初始化时，默认显示；<br>如果是 false，初始化时，默认隐藏。  |
 |  href | url 路径  | 空值  | 如果值不是以#号开头，则表示一个url 地址，加载 url 内容到modal-content 容器里，并只加载一次。如果是#号，就是取代data-target 的方法。  |
+
 //空白背景且点击不关闭
 data-backdrop="false"
 
