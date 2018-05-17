@@ -156,7 +156,47 @@ $('#myModal').modal('show');
 
 });
 ```
+#### - 事件
+模态框支持 4 种事件，分别对应弹出前、弹出后、关闭前和关闭后
 
+|  事件类型 |  描述 |
+| ------------ | ------------ |
+| show.bs.modal  | 在 show 方法调用时立即触发  |
+|  shown.bs.modal | 在模态框完全显示出来,并且等css动画完成之后触发  |
+|  hide.bs.modal | 在 hide 方法调用时，但还未关闭隐藏时触发  |
+|  hidden.bs.modal | 在模态框完全隐藏之后，并且等 CSS 动画完成之后触发  |
+
+```javascript
+$('#myModal').on('show.bs.modal', function () {
+
+alert('在 show 方法调用时立即触发！');
+
+});
+
+$('#myModal').on('shown.bs.modal', function () {
+
+alert('在模态框显示完毕后触发！');
+
+});
+
+$('#myModal').on('hide.bs.modal', function () {
+
+alert('在 hide 方法调用时立即触发！');
+
+});
+
+$('#myModal').on('hiden.bs.modal', function () {
+
+alert('在模态框显示完毕后触发！');
+
+});
+
+$('#myModal').on('loaded.bs.modal', function () {
+
+alert('远程数据加载完毕后触发！');
+
+});
+```
 ##  模态框
 
 
