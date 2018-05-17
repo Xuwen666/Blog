@@ -348,4 +348,154 @@ $('#content').scrollspy('refresh');
 }
 ```
 
+##  标签页
+标签页也就是通常所说的选项卡功能
+```html
+//基本用法
+<ul class="nav nav-tabs">
+<li class="active"><a href="#html5"
+data-toggle="tab">HTML5</a></li>
+<li><a href="#bootstrap" data-toggle="tab">Bootstrap</a></li>
+<li><a href="#jquery" data-toggle="tab">jQuery</a></li>
+<li><a href="#extjs" data-toggle="tab">ExtJS</a></li>
+</ul>
+<div class="tab-content" style="padding: 10px;">
+<div class="tab-pane active" id="html5">...</div>
+<div class="tab-pane" id="bootstrap">...</div>
+<div class="tab-pane" id="jquery">...</div>
+<div class="tab-pane" id="extjs">...</div>
+</div>
+```
+可以设置淡入淡出效果 fade，而 in 表示首选的内容默认显示
+```html
+<div class="tab-pane fade in active" id="html5">
+```
+也可以换成胶囊式
+```html
+<ul class="nav nav-pills">
+```
+#### - 方法
+```javascript
+$('#nav a').on('click', function (e) {
+e.preventDefault();
+$(this).tab('show');
+});
+```
+#### - 事件
+| 事件类型  | 描述  |
+| ------------ | ------------ |
+|  show.bs.tab  |  在调用 tab 方法时触发 |
+| shown.bs.tab  |  在显示整个标签时触发 |
 
+##  工具提示
+工具提示就是通过鼠标移动选定在特定的元素上时，显示相关的提示语
+```html
+//基本实例
+<a href="#" data-toggle="tooltip" title="超文本标识符">HTML5</a>
+```
+```javascript
+//JS 部分需要声明
+$('#section').tooltip();
+```
+工具提示有很多属性来配置提示的显示，具体如下：
+
+| 属性名  |   描述|
+| ------------ | ------------ |
+|  data-animation |  默认 true，在 tooltip 上应用一个 CSS fade 动画。如果设置 false，则不应用。 |
+| data-html  |  默认 false，不允许提示内容格式为 html。<br></br如果设置为>如果设置为 true，则可以设置 html 格式的提示内容 |
+|  data-placement |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
