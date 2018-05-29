@@ -601,7 +601,7 @@ $('button').on('click', function () {
 $(this).button('toggle');
 })
 ```
-#### - 折叠
+##  折叠
 通过点击可以折叠内容
 ```javascript
 //基本实例
@@ -705,7 +705,7 @@ $('#collapseOne').collapse('toggle');
 | hide.bs.collapse  |  在 hide 方法调用时触发 |
 |  hidden.bs.collapse | 该事件在折叠区域完全隐藏之后触发  |
 
-#### - 轮播
+##  轮播
 轮播插件就是将几张同等大小的大图，按照顺序依次播放
 ```html
  //基本实例。
@@ -792,3 +792,115 @@ $('#myCarousel').carousel('cycle');
 | slide.bs.carousel  |  当调用 slide 实例方式时立即触发该事件 |
 | slid.bs.carousel  | 当轮播完成一个幻灯片触发该事件  |
 
+
+##  附加导航
+附加导航即粘贴在屏幕某处实现锚点功能。
+```html
+<body data-spy="scroll" data-target="#myScrollspy">
+            <div class="container">
+                <div class="jumbotron" style="height:150px">
+                    <h1>
+                        Bootstrap Affix
+                    </h1>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3" id="myScrollspy">
+                        <ul class="nav nav-pills nav-stacked" data-offset-top="150" data-spy="affix">
+                            <li class="active">
+                                <a href="#section-1">
+                                    第一部分
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#section-2">
+                                    第二部分
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#section-3">
+                                    第三部分
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#section-4">
+                                    第四部分
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#section-4">
+                                    第五部分
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-9">
+                        <h2 id="section-1">
+                            第一部分
+                        </h2>
+                        <p>
+                            ...
+                        </p>
+                        <h2 id="section-2">
+                            第二部分
+                        </h2>
+                        <p>
+                            ...
+                        </p>
+                        <h2 id="section-3">
+                            第三部分
+                        </h2>
+                        <p>
+                            ...
+                        </p>
+                        <h2 id="section-4">
+                            第四部分
+                        </h2>
+                        <p>
+                            ...
+                        </p>
+                        <h2 id="section-5">
+                            第四部分
+                        </h2>
+                        <p>
+                            ...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </body>
+```
+```css
+//导航的 CSS 部分
+ul.nav-pills {
+width: 200px;
+}
+ul.nav-pills.affix{
+top: 30px;
+}
+```
+```javascript
+//JavaScript 代替 data-spy="affix" data-offset-top="125"
+$('#myAffix').affix({
+offset: {
+top: 150
+}
+})
+```
+我们默认使用的是 top，当然也可以默认居底 bottom。这个定位方式是直接通过 CSS
+定位的
+```css
+//设置成 bottom
+ul.nav-tabs.affix-bottom{
+bottom : 30px;
+}
+```
+
+```css
+//设置成 bottom
+$('#myAffix').affix({
+offset: {
+bottom: 150
+}
+}
+```
+#### - 事件
